@@ -23,15 +23,15 @@ def extractColumns(grid):
     cols.append(col) 
   return cols 
 
-def findFour(grid):
+def findThree(grid):
   # check rows
   for row in grid:
-    if row.count(row[0]) == len(row):
+    if row.count(row[0]) == 3:
       return 'Legal move'
   
   #check columns
   for col in extractColumns(grid):
-    if col.count(col[0] == len(col)):
+    if col.count(col[0] == 3):
       return 'Legal move'
 
   return 'Illegal move'
@@ -83,7 +83,7 @@ def validateMove(inp, grid):
 
   print('Your move:')
   printGrid(newGrid)
-  return findFour(newGrid)
+  return findThree(newGrid)
 
 initialGrid = [[2, 1, 2, 3], [5, 4, 4, 5], [2, 5, 3, 4], [6, 7, 6, 1]]
 printGrid(initialGrid)
