@@ -83,7 +83,7 @@ def validateMove(inp, grid):
 
   print('Your move:')
   printGrid(newGrid)
-  return findThree(newGrid)
+  return findFour(newGrid)
 
 initialGrid = [[2, 1, 2, 3], [5, 4, 4, 5], [2, 5, 3, 4], [6, 7, 6, 1]]
 printGrid(initialGrid)
