@@ -26,17 +26,21 @@ def extractColumns(grid):
 def findThree(grid):
   # check rows
   for row in grid:
-    if row.count(row[0]) == 3:
+    mostFrequent = max(row, key=row.count)
+    if row.count(mostFrequent) == 4:
       return 'Legal move'
+    elif row.count(mostFrequent) == 3 and row.index(mostFrequent) != 0:
+        return 'Legal move'
   
   #check columns
   for col in extractColumns(grid):
-    if col.count(col[0] == 3):
+    mostFrequent = max(col, key=col.count)
+    if col.count(mostFrequent) == 4:
       return 'Legal move'
+    elif col.count(mostFrequent) == 3 and col.index(mostFrequent) != 0:
+        return 'Legal move'
 
   return 'Illegal move'
-
-
 
 def validateMove(inp, grid):
   splitInput = inp.split(' ')
