@@ -23,7 +23,7 @@ def extractColumns(grid):
     cols.append(col) 
   return cols 
 
-def findThree(grid):
+def findFour(grid):
   # check rows
   for row in grid:
     if row.count(row[0]) == len(row):
